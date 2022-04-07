@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -8,7 +8,7 @@ import {
 import { auth } from "../firebase-config";
 
 export default function Signup() {
-
+    
     const [registerEmail, setRegisterEmail] = React.useState("");
     const [registerPassword, setRegisterPassword] = React.useState("");
     const [loginEmail, setLoginEmail] = React.useState("");
@@ -22,27 +22,27 @@ export default function Signup() {
     const register = async () => {
         try {
             const user = await createUserWithEmailAndPassword(
-              auth,
-              registerEmail,
-              registerPassword
+                auth,
+                registerEmail,
+                registerPassword
             );
             console.log(user);
-          } catch (error) {
+        } catch (error) {
             console.log(error.message);
-          }
+        }
     };
 
     const login = async () => {
         try {
             const user = await signInWithEmailAndPassword(
-              auth,
-              loginEmail,
-              loginPassword
+                auth,
+                loginEmail,
+                loginPassword
             );
             console.log(user);
-          } catch (error) {
+        } catch (error) {
             console.log(error.message);
-          }
+        }
     };
 
     const logout = async () => {
@@ -66,6 +66,7 @@ export default function Signup() {
 
             <h4>User: {user ? user.email : ""}</h4>
             <button onClick={logout}>Signout</button>
+           
         </div>
     )
 }
