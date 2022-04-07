@@ -20,7 +20,10 @@ function App() {
           <Route exact path="transactions" element={<Transactions />} />
           <Route path="charts" element={<Charts />} />
           <Route path="accounts" element={<Accounts />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="settings">
+            <Route index={true} element={<Settings navLink={navLink} setNavLink={setNavLink}/>} />
+            <Route index={false} path="signup" element={<Signup />} />
+          </Route>
         </Routes>
         <Footer navLink={navLink} setNavLink={setNavLink}/>
       </BrowserRouter>
@@ -30,3 +33,8 @@ function App() {
 }
 
 export default App;
+
+
+// References
+
+// https://stackoverflow.com/questions/64291991/nested-routing-is-not-working-in-react-router-v6

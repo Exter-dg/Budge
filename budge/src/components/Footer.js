@@ -2,7 +2,7 @@ import React , {useCallback, useEffect} from "react";
 import { Badge, TabBar, Tabs } from 'antd-mobile'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook, faChartArea, faPiggyBank, faList, faC } from '@fortawesome/free-solid-svg-icons'
-import {Link, Outlet, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import {
     AppOutline,
